@@ -38,6 +38,7 @@ const MainDrawer = ({ open, handleDrawerToggle, window }) => {
           open={open}
           onClose={handleDrawerToggle}
           ModalProps={{ keepMounted: true }}
+          anchor="left"
           sx={{
             display: { xs: 'block', lg: 'none' },
             '& .MuiDrawer-paper': {
@@ -58,9 +59,9 @@ const MainDrawer = ({ open, handleDrawerToggle, window }) => {
 };
 
 MainDrawer.propTypes = {
-  open: PropTypes.bool,
-  handleDrawerToggle: PropTypes.func,
-  window: PropTypes.object
+    open: PropTypes.bool,
+    handleDrawerToggle: PropTypes.func,
+    window: PropTypes.object
 };
 
 export default MainDrawer;

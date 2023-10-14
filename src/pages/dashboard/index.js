@@ -18,6 +18,9 @@ import {
   Typography
 } from '@mui/material';
 
+// ANT DESING IMPORT
+import { Calendar, ConfigProvider } from 'antd';
+
 // project import
 import OrdersTable from './OrdersTable';
 import IncomeAreaChart from './IncomeAreaChart';
@@ -33,6 +36,7 @@ import avatar1 from 'assets/images/users/avatar-1.png';
 import avatar2 from 'assets/images/users/avatar-2.png';
 import avatar3 from 'assets/images/users/avatar-3.png';
 import avatar4 from 'assets/images/users/avatar-4.png';
+import StatisticalAreaCards from './StatisticalAreaCards';
 
 // avatar style
 const avatarSX = {
@@ -75,8 +79,34 @@ const DashboardDefault = () => {
 
   return (
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
+      {/* Stat Cards Area */}
+      <Grid item xs={12} sx={{ mb: -2.25 }} >
+        <Typography variant="h5">Dashboard</Typography>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <StatisticalAreaCards />
+      </Grid>
+      <Grid item xs={12} display={{ xs: 'block', lg: 'none' ,md: 'none' }}>
+        <Typography variant="h5">Month Calender</Typography>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <MainCard content={true} sx={{ p: 0.25 }}>
+          <ConfigProvider
+            theme={{
+              components:{
+                Calendar:{
+                  miniContentHeight:20,
+                },
+              },
+            }}
+          >
+          <Calendar fullscreen={false}/>
+          </ConfigProvider>
+        </MainCard>
+      </Grid>
+      
       {/* row 1 */}
-      <Grid item xs={12} sx={{ mb: -2.25 }}>
+      {/* <Grid item xs={12} sx={{ mb: -2.25 }}>
         <Typography variant="h5">Dashboard</Typography>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -89,13 +119,13 @@ const DashboardDefault = () => {
         <AnalyticEcommerce title="Total Order" count="18,800" percentage={27.4} isLoss color="warning" extra="1,943" />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" />
+        <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="success" extra="$20,395" />
       </Grid>
 
-      <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
-
+      <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} /> */}
+      
       {/* row 2 */}
-      <Grid item xs={12} md={7} lg={8}>
+      {/* <Grid item xs={12} md={7} lg={8}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography variant="h5">Unique Visitor</Typography>
@@ -145,10 +175,10 @@ const DashboardDefault = () => {
           </Box>
           <MonthlyBarChart />
         </MainCard>
-      </Grid>
+      </Grid> */}
 
       {/* row 3 */}
-      <Grid item xs={12} md={7} lg={8}>
+      {/* <Grid item xs={12} md={7} lg={8}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography variant="h5">Recent Orders</Typography>
@@ -183,10 +213,10 @@ const DashboardDefault = () => {
           </List>
           <ReportAreaChart />
         </MainCard>
-      </Grid>
+      </Grid> */}
 
       {/* row 4 */}
-      <Grid item xs={12} md={7} lg={8}>
+      {/* <Grid item xs={12} md={7} lg={8}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography variant="h5">Sales Report</Typography>
@@ -217,11 +247,11 @@ const DashboardDefault = () => {
           </Stack>
           <SalesColumnChart />
         </MainCard>
-      </Grid>
-      <Grid item xs={12} md={5} lg={4}>
+      </Grid> */}
+      {/* <Grid item xs={12} md={5} lg={4}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
-            <Typography variant="h5">Transaction History</Typography>
+            <Typography variant="h5">Transaction History</Typography>~
           </Grid>
           <Grid item />
         </Grid>
@@ -336,7 +366,7 @@ const DashboardDefault = () => {
             </Button>
           </Stack>
         </MainCard>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

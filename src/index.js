@@ -24,6 +24,7 @@ root.render(
   <StrictMode>
     <ReduxProvider store={store}>
       <BrowserRouter basename="/free">
+        {document.dir= 'rtl'}
         <App />
       </BrowserRouter>
     </ReduxProvider>

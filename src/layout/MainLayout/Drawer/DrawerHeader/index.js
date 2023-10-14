@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
+
 import { Stack, Chip } from '@mui/material';
 
 // project import
@@ -23,9 +24,9 @@ const DrawerHeader = ({ open }) => {
           size="small"
           sx={{ height: 16, '& .MuiChip-label': { fontSize: '0.625rem', py: 0.25 } }}
           component="a"
-          href="https://github.com/codedthemes/mantis-free-react-admin-template"
+          //href="https://github.com/codedthemes/mantis-free-react-admin-template"
           target="_blank"
-          clickable
+          clickable={false}
         />
       </Stack>
     </DrawerHeaderStyled>
